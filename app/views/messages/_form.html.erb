@@ -1,6 +1,13 @@
 <%= form_for(message) do |f| %>
 
-  <%= f.text_area :body, placeholder: "Enter message..." %>
+  <div class="form-group">
+    <%= f.text_area :body, :class => 'form-control', :placeholder => 'Enter message...', rows: "3" %>
+  </div>
 
-  <%= f.submit "Submit", class: "btn btn-primary" %>
+  <div class="form-group">
+    <%= f.submit "Submit", :class => 'btn btn-primary btn-sm pull-right' %>
+  </div>
+
+  <%= flash_messages %>
+
 <% end %>

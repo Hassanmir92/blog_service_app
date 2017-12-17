@@ -1,20 +1,34 @@
-<h1>Messages</h1>
+<div class="container">
+  <div class="row text-center">
+    <div class="col-md-12">
+      <h1>Messages</h1>
+    </div>
+  </div>
 
-<div class="new-message">
-  <%= render 'form', message: @message %>
-  <%= flash_messages %>
-</div>
+  <div class="new-message">
+    <%= render 'form', message: @message %>
+  </div>
 
-<div class="messages">
-  <% if @messages.present? %>
-    <% @messages.each do |message| %>
-      <%= render 'message', message: message %>
-    <% end %>
-  <% else %>
-    <div class="no-content">
-      <div class="placeholder">
-        <p>Nothing here, yet!</p>
+  <hr>
+
+  <div class="twt-wrapper">
+    <div class="panel">
+      <div class="panel-body">
+        <ul class="media-list">
+          <% if @messages.present? %>
+            <% @messages.each do |message| %>
+              <%= render 'message', message: message %>
+            <% end %>
+          <% else %>
+            <div class="row">
+              <div class="col-md-12 text-center">
+                <i>Nothing to display!</i>
+              </div>
+            </div>
+          <% end %>
+        </ul>
       </div>
     </div>
-  <% end %>
+  </div>
 </div>
+

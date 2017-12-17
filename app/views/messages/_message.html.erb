@@ -1,8 +1,11 @@
-<article class="message">
-  <div class="message-body">
+<li class="media">
+  <div class="media-body">
+    <span class="text-muted pull-right">
+      <small class="text-muted"><%= time_ago_in_words message.created_at %></small>
+    </span>
     <p>
-      <%= simple_format(message.body) %>
-      <%= time_ago_in_words(message.created_at) %> ago
+      <%= simple_format message.body %>
     </p>
   </div>
-</article>
+</li>
+<hr>
