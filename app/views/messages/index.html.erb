@@ -1,1 +1,19 @@
 <h1>Messages</h1>
+
+<div class="new-message">
+  <%= render 'form', message: @message %>
+</div>
+
+<div class="messages">
+  <% if @messages.present? %>
+    <% @messages.each do |message| %>
+      <%= render 'message', message: message %>
+    <% end %>
+  <% else %>
+    <div class="no-content">
+      <div class="placeholder">
+        <p>Nothing here, yet!</p>
+      </div>
+    </div>
+  <% end %>
+</div>
