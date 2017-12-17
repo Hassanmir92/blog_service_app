@@ -20,6 +20,7 @@ feature "Messages Index:" do
     expect(page.current_path).to eq("/")
     expect(page).to have_content("Messages")
     expect(page).to have_content("New example message")
+    expect(page).to have_content("Message successfully created!")
   end
 
   scenario "Fail to create a new message with over 150 characters", js: true do
@@ -42,5 +43,24 @@ feature "Messages Index:" do
     expect(page.current_path).to eq("/")
     expect(page).to have_content("Messages")
     expect(page).to have_content("Unsuccessful to submit as your message is empty!")
+  end
+
+  scenario "Successfully create and delete a message", js: true do
+    visit "/"
+
+    fill_in "message_body", :with => "New example message"
+    click_on "Submit"
+
+    expect(page.current_path).to eq("/")
+    expect(page).to have_content("Messages")
+    expect(page).to have_content("New example message")
+    expect(page).to have_content("Message successfully created!")
+
+    click_on "Delete"
+
+    expect(page.current_path).to eq("/")
+    expect(page).to have_content("Messages")
+    expect(page).to_not have_content("New example message")
+    expect(page).to have_content("Message successfully deleted!")
   end
 end
