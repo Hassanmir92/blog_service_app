@@ -1,0 +1,13 @@
+AllCops:
+  Exclude:
+    - 'Rakefile'
+    - 'bin/*'
+    - 'Gemfile'
+    - 'Gemfile.lock'
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'script/**/*'
+    - !ruby/regexp /old_and_unused\.rb$/
+
+# other configuration
+# ...
