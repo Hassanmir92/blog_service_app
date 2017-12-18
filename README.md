@@ -1,24 +1,31 @@
-# README
+# Blog Service App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A prototype of the timeline feature related to the blogging service.
 
-Things you may want to cover:
+As this is a prototype there are user authentication. The purpose of this prototype is to demo the timeline functionality only.
 
-* Ruby version
+As a user:
 
-* System dependencies
+* You should be able to post a message to the timeline
+* You should be able to see all messages on the timeline
+* You should be able to delete a message from the timeline
 
-* Configuration
 
-* Database creation
+## Setup
 
-* Database initialization
+In order to setup, run the following commands in your console and navigate to localhost:3000 in your browser.
 
-* How to run the test suite
+`rake db:create`
 
-* Services (job queues, cache servers, search engines, etc.)
+`rake db:migrate`
 
-* Deployment instructions
+`bundle install`
 
-* ...
+`rails s`
+
+
+## Running Tests
+
+`rake db:migrate RAILS_ENV=test`
+
+`rspec spec`
