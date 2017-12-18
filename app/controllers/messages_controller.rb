@@ -1,4 +1,4 @@
-class MessagesController < ApplicationController
+class MessagesController < ApplicationController # :nodoc:
   def index
     @message = Message.new
 
@@ -9,9 +9,9 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
 
     if @message.save
-      flash[:success] = "Message successfully created!"
+      flash[:success] = 'Message successfully created!'
     else
-      flash[:error] = @message.errors.values.join(", ")
+      flash[:error] = @message.errors.values.join(', ')
     end
 
     redirect_to root_path
@@ -21,9 +21,9 @@ class MessagesController < ApplicationController
     @message = Message.find(params[:id])
 
     if @message.destroy
-      flash[:success] = "Message successfully deleted!"
+      flash[:success] = 'Message successfully deleted!'
     else
-      flash[:error] = @message.errors.values.join(", ")
+      flash[:error] = @message.errors.values.join(', ')
     end
 
     redirect_to root_path
